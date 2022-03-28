@@ -1,0 +1,14 @@
+
+.product{
+  text-align: center;
+  padding: 5%;
+}
+.product img{
+  max-width: 100%;
+}
+.bottom{
+  text-align: center;
+  background-color: rgb(238, 237, 237);
+  height: 20%;
+  max-width: 100%;
+}

@@ -1,0 +1,35 @@
+<div class="content">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>帳號 ：</mat-label>
+      <input matInput formControlName="form_account" required>
+
+      <div *ngIf="form_account.invalid && (form_account.dirty || form_account.touched)" class="alert">
+        <div *ngIf="form_account.errors?.['required']">
+          請輸入帳號！！
+        </div>
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>密碼 ：</mat-label>
+      <input matInput formControlName="from_password" required>
+
+      <div *ngIf="form_password.invalid && (form_password.dirty || form_password.touched)" class="alert">
+        <div *ngIf="form_password.errors?.['required']">
+          請輸入密碼！！
+        </div>
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail ：</mat-label>
+      <input matInput formControlName="from_email" required>
+
+      <div *ngIf="form_email.invalid && (form_email.dirty || form_email.touched)" class="alert">
+        <div *ngIf="form_email.errors?.['required']">
+          請輸入Email！！
+        </div>
+      </div>
+    </mat-form-field>
+    <span><button mat-button type="submit" [disabled]="!form.valid">確認</button></span>
+  </form>
+</div>
