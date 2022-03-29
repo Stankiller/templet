@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { productObject } from './../../productObject';
-import { CartService } from './../../cart.service';
-import { ProductService } from '../../product.service';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog',

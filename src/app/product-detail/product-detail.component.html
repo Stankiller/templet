@@ -1,11 +1,13 @@
-<mat-grid-list cols="2" rowHeight="1:1" *ngIf="product">
-  <mat-grid-tile colspan="1" rowspan="1"><img class="pic" [src]="product.photo"></mat-grid-tile>
-  <mat-grid-tile colspan="1" rowspan="1">
-    <div>
-    <p>品名：{{product.text}}</p>
-    <p>描述：</p>
-    <mat-form-field class="qty"><mat-label>數量：</mat-label><input matInput type="text"></mat-form-field><br>
-    <button mat-button (click)="openDialog()">送出</button>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="content">
+  <mat-grid-list cols="2" rowHeight="1:1" *ngIf="product">
+    <mat-grid-tile colspan="1" rowspan="1"><img class="pic" [src]="product.photo"></mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <div>
+      <p>品名：{{product.text}}</p>
+      <p>描述：</p>
+      <mat-form-field class="qty"><mat-label>數量：</mat-label><input matInput type="text" [(ngModel)]="qty"></mat-form-field><br>
+      <button mat-button (click)="addToCart(product)">送出</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

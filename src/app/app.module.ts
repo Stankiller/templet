@@ -33,7 +33,10 @@ import { DialogComponent } from './product-detail/dialog/dialog.component';
     CartComponent,
     LoginComponent,
     SignupComponent,
-    DialogComponent,
+    DialogComponent
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +56,9 @@ import { DialogComponent } from './product-detail/dialog/dialog.component';
       {path : '', component : ContentComponent },
       {path : 'productDetail/:id', component : ProductDetailComponent },
       {path : 'cart', component : CartComponent },
-      {path : '**', component : NoDataFoundComponent },
       {path : 'login', component : LoginComponent },
       {path : 'signup', component : SignupComponent },
+      {path : '**', component : NoDataFoundComponent },
     ]),
   ],
   providers: [],

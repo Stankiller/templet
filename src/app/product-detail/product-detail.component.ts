@@ -1,3 +1,4 @@
+import { DialogComponent } from './dialog/dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { productObject } from './../productObject';
 import { CartService } from './../cart.service';
@@ -12,8 +13,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class ProductDetailComponent implements OnInit {
-  product_id : productObject | undefined;
   product: productObject | undefined;
+  qty: number = 0;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -34,18 +35,9 @@ export class ProductDetailComponent implements OnInit {
 
   addToCart(product: productObject): void{
     this.cart.addToCart(product);
+    this.openDialog();
+    this.qty = 0;
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(Dialog);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  openDialog() {this.dialog.open(DialogComponent);}
 }
-@Component({
-  selector: 'dialog',
-  templateUrl: 'dialog.html',
-})
-export class Dialog {}
